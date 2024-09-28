@@ -22,6 +22,9 @@
                     <a href="{{route('genre.index')}}"><i class="fa fa-user"></i> <span class="nav-label"> QL Thể loại</span> </a>
                 </li>
                 <li >
+                    <a href="{{route('status.index')}}"><i class="fa fa-user"></i> <span class="nav-label"> QL Mượn Trả </span> </a>
+                </li>
+                <li >
                     <a href="{{route('author.index')}}"><i class="bi bi-cart4"></i> <span class="nav-label">QL Tác giả</span> </a>
                 </li>
             @endif

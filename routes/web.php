@@ -56,4 +56,5 @@ Route::group(['prefix'=>'borrow'],function(){
 });
 Route::group(['prefix'=>'status'],function(){
    Route::get('index',[StatusController::class,'index'])->name('status.index');
+    Route::post('accept/{id}',[StatusController::class,'accept'])->name('status.accept');
 });

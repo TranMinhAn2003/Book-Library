@@ -13,4 +13,18 @@ class StatusController extends Controller
         $template='status.index';
         return view('dashboard.index',compact('template','books'));
     }
+    public function accept($id){
+        $borrow=Borrow::find($id);
+        if($borrow->status==0){
+            $borrow->status = 1;
+            flash()->success('Đã trả sách');
+        }else{
+            $borrow->status = 0;
+            flash()->success('Chưa trả sách');
+        }
+
+        $borrow->save();
+
+        return redirect()->route('status.index');
+    }
 }

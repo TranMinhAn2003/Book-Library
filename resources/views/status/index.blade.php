@@ -48,12 +48,18 @@
                                     </td>
 
                                     <td>
-                                        @if($book->status==0)
-                                            Đang muợn
+                                        <input type="text" value="{{ $book->status }}" hidden>
+                                        @if($book->status == 0)
+                                            <form action="{{ route('status.accept', $book->id) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-success">Đang mượn</button>
+                                            </form>
                                         @else
-                                            Đã trả
+                                            <form action="{{route('status.accept', $book->id)}}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">Đã trả</button>
+                                            </form>
                                         @endif
-
                                     </td>
 
                                 </tr>
