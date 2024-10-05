@@ -18,11 +18,10 @@ class StatusController extends Controller
         if($borrow->status==0){
             $borrow->status = 1;
             flash()->success('Đã trả sách');
-        }else{
-            $borrow->status = 0;
-            flash()->success('Chưa trả sách');
+        }elseif($borrow->status==1){
+            $borrow->status = 2;
+            flash()->success('Xác nhận trả');
         }
-
         $borrow->save();
 
         return redirect()->route('status.index');

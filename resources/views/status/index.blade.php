@@ -54,7 +54,12 @@
                                                 @csrf
                                                 <button type="submit" class="btn btn-success">Đang mượn</button>
                                             </form>
-                                        @else
+                                        @elseif($book->status == 1)
+                                            <form action="{{route('status.accept', $book->id)}}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">Đang chờ xác nhận trả</button>
+                                            </form>
+                                        @elseif($book->status == 2)
                                             <form action="{{route('status.accept', $book->id)}}" method="POST">
                                                 @csrf
                                                 <button type="submit" class="btn btn-primary">Đã trả</button>

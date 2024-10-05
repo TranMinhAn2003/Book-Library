@@ -32,6 +32,12 @@
                 <a href="{{route('book.index')}}"><i class="bi bi-bag-dash-fill"></i><span class="nav-label">QL Sách</span> </a>
 
             </li>
+            <li>
+                <a href="{{route('user.profile',Auth::user()->id)}}"><i class="fa fa-user"></i> Người dùng</a>
+            </li>
+            <li>
+                <a href="{{route('user.borrow',Auth::user()->id)}}"><i class="fa fa-user"></i> Sách đã mượn</a>
+            </li>
 
             @if(Auth::check())
                 <li>
